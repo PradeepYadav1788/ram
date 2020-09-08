@@ -13,7 +13,7 @@
 }
 
  # remove default htm file
-  remove-item  C:\inetpub\wwwroot\iisstart.htm
+  remove-item  C:\inetpub\wwwroot\ii.htm
   if($? -eq "true"){
    write-host("Commnad executed successfully")
   }else {
