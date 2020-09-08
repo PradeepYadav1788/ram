@@ -3,7 +3,7 @@
  function ExitWithCode { param($exitcode=99) $host.SetShouldExit($exitcode); exit }
  
  
- Install-WindowsFeature -name Web-Server -IncludeManagementTools
+ Install-WindowsFeature -name Web-Server -IncludeManagetTools
  
  if($? -eq "true"){
    write-host("Commnad executed successfully")
@@ -22,7 +22,7 @@
 }
 
  # Add a new htm file that displays server name
-  Add-Content -Path "C:\inetpub\wwwroot\iisstart.htm" -Value $("Hello World from " + $env:computername)
+  Add-Content -Path "C:\inetpub\wwwroot\iisstart.htm" -Value $("Hello Wor from " + $env:computername)
   if($? -eq "true"){
    write-host("Commnad executed successfully")
    }else {
