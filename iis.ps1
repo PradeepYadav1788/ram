@@ -16,7 +16,7 @@
  ExitWithCode
 
  # remove default htm file
-  remove-item  C:\inetpub\wwwroot\iisst.htm
+  remove-item  C:\inetpub\wwwroot\iisstart.htm
   ExitWithCode
 
  # Add a new htm file that displays server name
