@@ -1,32 +1,25 @@
 # install IIS server role
 
- #function ExitWithCode { param($exitcode=99) $host.SetShouldExit($exitcode); exit }
  param($code=99)
- 
- Install-WindowsFeature -name Web-Server -IncludeManagementTools
- 
+ function ExitWithCode { 
  if($? -eq "true"){
-   write-host("Commnad executed successfully")
-   }else {
-   write-host("Commnad execution failed ")
-   exit $code
-}
-
- # remove default htm file
-  remove-item  C:\inetpub\wwwroot\iisst.htm
-  if($? -eq "true"){
    write-host("Commnad executed successfully")
   }else {
    write-host("Commnad execution failed ")
    exit $code
+} 
 }
+ 
+ 
+ 
+ Install-WindowsFeature -name Web-Server -IncludeManagementTools
+ ExitWithCode
+
+ # remove default htm file
+  remove-item  C:\inetpub\wwwroot\iisst.htm
+  ExitWithCode
 
  # Add a new htm file that displays server name
   Add-Content -Path "C:\inetpb\ww\iisstart.htm" -Value $("Hello World from " + $env:computername)
-  if($? -eq "true"){
-   write-host("Commnad executed successfully")
-   }else {
-   write-host("Commnad execution failed ")
-   exit $code 
-}
+  ExitWithCode
   
