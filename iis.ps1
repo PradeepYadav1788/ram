@@ -20,6 +20,6 @@
   ExitWithCode
 
  # Add a new htm file that displays server name
-  Add-Content -Path "C:\inetpb\ww\iisstart.htm" -Value $("Hello World from " + $env:computername)
+  Add-Content -Path "C:\inetpub\wwwroot\iisstart.htm" -Value $("Hello World from " + $env:computername)
   ExitWithCode
   
